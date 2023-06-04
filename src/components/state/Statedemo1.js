@@ -1,0 +1,24 @@
+import React, { Component } from 'react'
+
+export default class Statedemo1 extends Component {
+    state = {
+        count:0,
+    };
+        increment = () => {
+            this.setState({
+                count:this.state.count + 1,
+            },() => {
+                console.log(this.state.count)
+            });
+            // this.setState((prevState) => ({count:prevState.count+1}));
+        };
+  render() {
+    return (
+      <div>
+        <p>This is statedemo-2</p>
+        <p>The count is:{this.state.count}</p>
+        <button onClick={this.increment}>increment</button>
+      </div>
+    )
+  }
+}
